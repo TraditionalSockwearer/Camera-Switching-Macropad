@@ -1,6 +1,0 @@
-[submodule "MyPCB/MyPCB/OPL_Kicad_Librar"]
-	path = MyPCB/MyPCB/OPL_Kicad_Librar
-	url = https://github.com/Seeed-Studio/OPL_Kicad_Library/
-[submodule "MyPCB/MyPCB/OPL_Kicad_Library"]
-	path = MyPCB/MyPCB/OPL_Kicad_Library
-	url = https://github.com/Seeed-Studio/OPL_Kicad_Library/
