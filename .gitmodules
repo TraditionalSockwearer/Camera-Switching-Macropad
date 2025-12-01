@@ -7,3 +7,6 @@
 [submodule "MyPCB/KiCad-SSD1306-0.91-OLED-4pin-128x32.pretty"]
 	path = MyPCB/KiCad-SSD1306-0.91-OLED-4pin-128x32.pretty
 	url = https://github.com/gorbachev/KiCad-SSD1306-0.91-OLED-4pin-128x32.pretty
+[submodule "Firmware/kmk_firmware"]
+	path = Firmware/kmk_firmware
+	url = https://github.com/KMKfw/kmk_firmware

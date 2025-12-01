@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "author": "Anderson Costa",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 112,
+      "left": 50,
+      "rotate": 270,
+      "attrs": { "env": "micropython-20220618-v1.19.1" }
+    },
+    { "type": "board-ssd1306", "id": "oled1", "top": 60, "left": 80, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 275,
+      "left": 48,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 332.6,
+      "left": 48,
+      "attrs": { "color": "blue", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 313.4,
+      "left": 182.4,
+      "attrs": { "color": "yellow", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 371,
+      "left": 182.4,
+      "attrs": { "color": "black", "xray": "1" }
+    },
+    { "type": "wokwi-neopixel", "id": "rgb1", "top": 188.5, "left": 248.6, "attrs": {} },
+    { "type": "wokwi-neopixel", "id": "rgb2", "top": 188.5, "left": 287, "attrs": {} },
+    { "type": "wokwi-neopixel", "id": "rgb3", "top": 188.5, "left": 335, "attrs": {} },
+    { "type": "wokwi-neopixel", "id": "rgb4", "top": 188.5, "left": 383, "attrs": {} }
+  ],
+  "connections": [
+    [ "bb1:2b.f", "bb1:2t.e", "black", [ "v0" ] ],
+    [ "bb1:3b.f", "bb1:3t.e", "red", [ "v0" ] ],
+    [ "bb1:4b.f", "bb1:4t.e", "purple", [ "v0" ] ],
+    [ "bb1:5b.f", "bb1:5t.e", "orange", [ "v0" ] ],
+    [ "bb1:2t.d", "bb1:12t.d", "black", [ "v0" ] ],
+    [ "bb1:3t.c", "bb1:13t.c", "red", [ "v0" ] ],
+    [ "bb1:4t.b", "bb1:14t.b", "purple", [ "v0" ] ],
+    [ "bb1:5t.a", "bb1:15t.a", "orange", [ "v0" ] ],
+    [ "bb1:12t.e", "oled1:GND", "black", [ "v0" ] ],
+    [ "bb1:13t.e", "oled1:VCC", "red", [ "v0" ] ],
+    [ "bb1:14t.e", "oled1:SCL", "purple", [ "v0" ] ],
+    [ "bb1:15t.e", "oled1:SDA", "orange", [ "v0" ] ],
+    [ "pico:9", "bb1:4b.j", "purple", [ "v0" ] ],
+    [ "pico:8", "bb1:5b.j", "orange", [ "v0" ] ],
+    [ "bb1:2t.a", "bb1:17t.a", "black", [ "v-7.93", "h144" ] ],
+    [ "bb1:15t.d", "bb1:16t.d", "orange", [ "v0" ] ],
+    [ "pico:3V3_EN", "bb1:3b.j", "red", [ "v0" ] ],
+    [ "pico:GND.8", "bb1:2b.j", "black", [ "v0" ] ],
+    [ "pico:GP27", "bb1:4b.j", "purple", [ "v-15", "h-38.25" ] ],
+    [ "pico:GP26", "bb1:5b.j", "orange", [ "v-25", "h-36.92" ] ],
+    [ "pico:GP15", "btn1:1.l", "green", [ "v0" ] ],
+    [ "btn1:2.l", "pico:GND.1", "green", [ "h0" ] ],
+    [ "pico:GP14", "btn2:1.l", "green", [ "v0" ] ],
+    [ "btn2:2.l", "pico:GND.1", "green", [ "h0" ] ],
+    [ "pico:GP13", "btn3:1.l", "green", [ "v0" ] ],
+    [ "btn3:2.l", "pico:GND.4", "green", [ "h0" ] ],
+    [ "pico:GP12", "btn4:1.l", "green", [ "v0" ] ],
+    [ "btn4:2.l", "pico:GND.4", "green", [ "h0" ] ],
+    [ "rgb1:DOUT", "rgb2:DIN", "green", [ "h0" ] ],
+    [ "rgb2:DOUT", "rgb3:DIN", "green", [ "h0" ] ],
+    [ "rgb3:DOUT", "rgb4:DIN", "green", [ "h0" ] ],
+    [ "pico:GP7", "rgb1:DIN", "green", [ "v0" ] ],
+    [ "rgb2:VDD", "rgb1:VDD", "green", [ "h0" ] ],
+    [ "rgb3:VDD", "rgb2:VDD", "green", [ "h0" ] ],
+    [ "rgb4:VDD", "rgb3:VDD", "green", [ "h0" ] ],
+    [ "rgb1:VDD", "pico:VBUS", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
