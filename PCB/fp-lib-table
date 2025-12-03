@@ -2,5 +2,5 @@
   (version 7)
   (lib (name "OPL")(type "KiCad")(uri "${KIPRJMOD}/OPL_Kicad_Library/Seeed Studio XIAO Series Library")(options "")(descr ""))
   (lib (name "OLED")(type "KiCad")(uri "${KIPRJMOD}/KiCad-SSD1306-0.91-OLED-4pin-128x32.pretty")(options "")(descr ""))
-  (lib (name "MXCHERRY")(type "KiCad")(uri "${KIPRJMOD}/MX_V2/MX_Hotswap.pretty")(options "")(descr ""))
+  (lib (name "MXCHERRY")(type "KiCad")(uri "${KIPRJMOD}/MX_V2/MX_Solderable.pretty")(options "")(descr ""))
 )
