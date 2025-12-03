@@ -15,7 +15,7 @@ Schematic
 
 <img width="764" height="378" alt="image" src="https://github.com/user-attachments/assets/d3047c62-dad2-44fa-a111-7360c529ee98" />
 
-# POM
+# BOM
 
 4x Cherry MX Switches 
 
