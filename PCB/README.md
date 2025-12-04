@@ -1,4 +1,4 @@
-# Require Footprint
+# Requires Footprint
 It is in .gitmodules. However, it doesn't upload so u need to add
 Oled display
 
