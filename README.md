@@ -61,6 +61,7 @@ OLED Display Link:
 1x Case (2 parts: Bottom Case and Cover)
 
 1x PCB
+
 Use JLBPCB for PCB
 Gerber files are made by opening pcb file. Then press the Files, then Plot, and make sure to press drill and as a single file (it's an option)
 
