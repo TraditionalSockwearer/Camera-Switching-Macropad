@@ -7,9 +7,9 @@ This project will be used for multi-camera live streaming in OBS. I plan on havi
 
 <img width="984" height="730" alt="image" src="https://github.com/user-attachments/assets/2d7f6ce6-2620-40b6-8b80-b89ede5abe7f" />
 
-<img width="1008" height="704" alt="image" src="https://github.com/user-attachments/assets/69323230-6ab3-42cd-a381-3aa47bd88d0e" />
+<img width="1006" height="647" alt="image" src="https://github.com/user-attachments/assets/8a1b63fc-cbfb-4a23-8d46-a5110c560c23" />
 
-    Made in Fusion360
+Made in Fusion360
 
 
 # PCB
@@ -24,39 +24,43 @@ Schematic
 4x Cherry MX Switches 
 
 2x SK6812 MINI Leds 
+SK6812 MINI-E RGB 20PCS Link: 
 
-    SK6812 MINI-E RGB 20PCS: 
     https://www.aliexpress.com/item/1005008308801366.html
 
 1x XIAO RP2040 
 
-    Seeed XIAO RP2040: 
+Seeed XIAO RP2040 Link: 
+
     https://www.aliexpress.com/item/1005008200917480.html
 
 4x Blank DSA Keycaps
 
-    Blank Keycaps 10PCS: 
+Blank Keycaps 10PCS Link: 
+    
     https://www.aliexpress.com/item/1005005514406952.html
 
 4x M3x16 Bolt 
 
-    M3x16mm Screw: 
+M3x16mm Screw Link: 
+    
     https://www.aliexpress.com/item/1005008585550992.html
 
 4x M3 Heatset 
 
-    M3 Heat Set: 
+M3 Heat Set Link: 
+
     https://www.aliexpress.com/item/1005008897571758.html
 
 1x 0.91" 128x32 OLED Display 
 
-    OLED Display: 
+OLED Display Link: 
+
     https://www.aliexpress.com/item/1005008640108394.html
 
 1x Case (2 parts: Bottom Case and Cover)
 
-1 PCB
-
-    Use JLBPCB for PCB
-    Gerber files are made by opening pcb file. Then press the Files, then Plot, and make sure to press drill and as a single file (it's an option)
+1x PCB
+Use JLBPCB for PCB
+Gerber files are made by opening pcb file. Then press the Files, then Plot, and make sure to press drill and as a single file (it's an option)
 
