@@ -21,15 +21,27 @@ Schematic
 
 2x SK6812 MINI Leds 
 
+    SK6812 MINI-E RGB 20PCS: https://www.aliexpress.com/item/1005008308801366.html $4.70 or £3.52
+
 1x XIAO RP2040 
+
+    Seeed XIAO RP2040: https://www.aliexpress.com/item/1005008200917480.html $5.27 or £3.95
 
 4x Blank DSA Keycaps
 
+    Blank Keycaps 10PCS: https://www.aliexpress.com/item/1005005514406952.html $2.11 or £1.58
+
 4x M3x16 Bolt 
+
+    M3x16mm Screw: https://www.aliexpress.com/item/1005008585550992.html $1.73 or £1.30
 
 4x M3 Heatset 
 
+    M3 Heat Set: https://www.aliexpress.com/item/1005008897571758.html $1.29 or £0.97
+
 1x 0.91" 128x32 OLED Display 
+
+    OLED Display: https://www.aliexpress.com/item/1005008640108394.html $1.69 or £1.27
 
 1x Case (2 parts: Bottom Case and Cover)
 
