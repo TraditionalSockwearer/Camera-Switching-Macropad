@@ -22,8 +22,8 @@ This device is being built for a local temple's media team. The goal is to provi
 
 ## 🛠️ Tech Stack
 * **Microcontroller:** Seeed Studio XIAO RP2040
-* **EDA / PCB:** KiCad 7.0 (Custom footprints for SK6812-MINI-E)
-* **CAD:** Fusion 360 (DFM for FDM 3D printing)
+* **EDA / PCB:** KiCad 7.0
+* **CAD:** Fusion 360
 * **Firmware:** Python (MicroPython) with State Machine logic.
 * **Simulation:** Wokwi (Used to validate I2C OLED & NeoPixel logic).
 
