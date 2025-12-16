@@ -4,30 +4,30 @@
 ![Hardware](https://img.shields.io/badge/Hardware-Seeed_XIAO_RP2040-blue)
 ![Software](https://img.shields.io/badge/Firmware-MicroPython-yellow)
 
-## 🚧 Project Status: Active Development
+## Project Status: Active Development
 **Current Phase:** PCB Design & Firmware Simulation
 This project is currently in the prototyping phase. The firmware logic has been partially validated via simulation (Wokwi), and the parts are currently being delivered. 
 
-## 📖 Project Overview
+## Project Overview
 This project is an ongoing engineering initiative to build a custom, 4-key mechanical macropad designed specifically for **Live OBS (Open Broadcaster Software) Scene Switching**.
 
 **The Use Case:**
 This device is being built for a local temple's media team. The goal is to provide volunteer operators with a simplified, fail-safe hardware interface to switch camera angles during live services, eliminating the need to interact with complex software UI during a broadcast.
 
-## 🎯 Planned Features
+## Planned Features
 * **Context-Aware Display:** Integrated **0.91" OLED** to display active camera scenes ("Camera 1 Active", etc.).
 * **Synced RGB Feedback:** 4x **SK6812 Mini-E LEDs** that provide colour-coded status indicators synchronised with the active scene.
 * **USB HID Interface:** Acts as a standard keyboard sending F13-F24 keys to trigger OBS hotkeys.
 * **Compact Form Factor:** Custom 3D-printed enclosure with heat-set inserts for durability.
 
-## 🛠️ Tech Stack
+## Tech Stack
 * **Microcontroller:** Seeed Studio XIAO RP2040
 * **EDA / PCB:** KiCad 7.0
 * **CAD:** Fusion 360
 * **Firmware:** Python (MicroPython) with State Machine logic.
 * **Simulation:** Wokwi (Used to validate I2C OLED & NeoPixel logic).
 
-## 📅 Development Roadmap
+## Development Roadmap
 - [x] **Requirement Analysis:** Defined constraints (silent switches, OLED feedback).
 - [x] **Component Sourcing:** Validated BOM (Bill of Materials) for cost/availability.
 - [x] **Schematic Capture:** Completed electrical schematic in KiCad.
@@ -36,7 +36,7 @@ This device is being built for a local temple's media team. The goal is to provi
 - [ ] **Firmware Prototype:** Created state-machine logic in Wokwi (Simulation).
 - [ ] **Integration:** Final HID implementation and OBS setup at the venue.
 
-## 📂 Repository Structure
+## Repository Structure
 ```text
 /CAD          # STL files (In Progress)
 /PCB       # Schematic and PCB files
@@ -45,7 +45,7 @@ This device is being built for a local temple's media team. The goal is to provi
 
 
 
-## 🧊 CAD Model
+## CAD Model
 <img width="951" height="779" alt="image" src="https://github.com/user-attachments/assets/b5844305-660c-411d-9da0-f54c886693f1" />
 
 <img width="984" height="730" alt="image" src="https://github.com/user-attachments/assets/2d7f6ce6-2620-40b6-8b80-b89ede5abe7f" />
@@ -55,14 +55,14 @@ This device is being built for a local temple's media team. The goal is to provi
 Made in Fusion360
 
 
-## 🟩 PCB
+## PCB
 <img width="1146" height="620" alt="image" src="https://github.com/user-attachments/assets/fefac079-6841-43f9-895a-d0292b97b4ad" />
 
-## 📝 Schematic
+## Schematic
 
 <img width="764" height="378" alt="image" src="https://github.com/user-attachments/assets/d3047c62-dad2-44fa-a111-7360c529ee98" />
 
-# 🛒 BOM
+# BOM
 
 * 4x Cherry MX Switches 
 
