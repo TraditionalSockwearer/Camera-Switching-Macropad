@@ -1,4 +1,4 @@
-# Custom OBS Macropad (RP2040) - Work in Progress
+# Custom OBS Macropad (RP2040)
 
 ![Status](https://img.shields.io/badge/Status-In_Development-orange)
 ![Hardware](https://img.shields.io/badge/Hardware-Seeed_XIAO_RP2040-blue)
