@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/Status-In_Development-orange)
 ![Hardware](https://img.shields.io/badge/Hardware-Seeed_XIAO_RP2040-blue)
-![Software](https://img.shields.io/badge/Firmware-MicroPython-yellow)
+![Software](https://img.shields.io/badge/Firmware-CircuitPython-purple)
 
 ## Project Status: Active Development
 **Current Phase:** PCB Design & Firmware Simulation
