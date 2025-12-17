@@ -17,15 +17,15 @@ This device is being built for a local temple's media team. The goal is to provi
 ## Planned Features
 * **Context-Aware Display:** Integrated **0.91" OLED** to display active camera scenes ("Camera 1 Active", etc.).
 * **Synced RGB Feedback:** 4x **SK6812 Mini-E LEDs** that provide colour-coded status indicators synchronised with the active scene.
-* **USB HID Interface:** Acts as a standard keyboard sending F13-F24 keys to trigger OBS hotkeys.
+* **USB HID Interface:** Acts as a standard keyboard sending F13-F16 keys to trigger OBS hotkeys.
 * **Compact Form Factor:** Custom 3D-printed enclosure with heat-set inserts for durability.
 
 ## Tech Stack
 * **Microcontroller:** Seeed Studio XIAO RP2040
-* **EDA / PCB:** KiCad 7.0
+* **EDA / PCB:** KiCad 9
 * **CAD:** Fusion 360
 * **Firmware:** Python (MicroPython) with State Machine logic.
-* **Simulation:** Wokwi (Used to validate I2C OLED & NeoPixel logic).
+* **Simulation:** Wokwi (Used to validate I2C OLED & NeoPixel logic) and onboard testing.
 
 ## Development Roadmap
 - [x] **Requirement Analysis:** Defined constraints (silent switches, OLED feedback).
@@ -33,7 +33,7 @@ This device is being built for a local temple's media team. The goal is to provi
 - [x] **Schematic Capture:** Completed electrical schematic in KiCad.
 - [x] **PCB Layout:** Routing tracks and defining edge cuts (In Progress).
 - [ ] **Prototyping:** 3D printing the case and soldering the first unit.
-- [ ] **Firmware Prototype:** Created state-machine logic in Wokwi (Simulation).
+- [x] **Firmware Prototype:** Created state-machine logic in Wokwi (Simulation).
 - [ ] **Integration:** Final HID implementation and OBS setup at the venue.
 
 ## Repository Structure
