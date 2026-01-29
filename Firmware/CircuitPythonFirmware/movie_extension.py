@@ -63,6 +63,15 @@ class MovieExtension(Extension):
         )
         self.text_group.append(self.text_area)
 
+        # Menu Group
+        self.menu_group = displayio.Group()
+        menu_label = label.Label(
+            terminalio.FONT, text="OBS  MEDIA", color=0xFFFFFF, scale=2, x=8, y=16
+        )
+        self.menu_group.append(menu_label)
+
+
+
         for args in [(128, 1, 0, 0), (128, 1, 0, 31), (1, 32, 0, 0), (1, 32, 127, 0)]:
             w, h, x, y = args
             self.text_group.append(displayio.TileGrid(displayio.Bitmap(w, h, 1), pixel_shader=self.palette, x=x, y=y))
@@ -73,7 +82,7 @@ class MovieExtension(Extension):
     def play_animation(self, text_after, color_rgb):
         """Triggers animation and sets new LED target color."""
         # LED Target
-        self.target_color = list(color_rgb)
+        self._fade_leds_to(color_rgb)
 
         if self.is_playing: return
 
@@ -87,8 +96,29 @@ class MovieExtension(Extension):
         while len(self.main_group) > 0: self.main_group.pop()
         self.main_group.append(self.anim_group)
 
+    def show_menu(self):
+        """Switches display to Menu Mode"""
+        self.is_playing = False
+        while len(self.main_group) > 0: self.main_group.pop()
+        self.main_group.append(self.menu_group)
+        self._fade_leds_to((0, 0, 0))
+
+    def show_status(self, text, color_rgb):
+        """Shows static status text without animation"""
+        self.is_playing = False
+        self.target_text = text
+        self.text_area.text = text
+        # Center text roughly
+        new_x = max(2, (128 - (len(text) * 12)) // 2)
+        self.text_area.x = int(new_x)
+        
+        while len(self.main_group) > 0: self.main_group.pop()
+        self.main_group.append(self.text_group)
+        self._fade_leds_to(color_rgb)
+
     def before_matrix_scan(self, sandbox):
         # Fade Logic
+
         self._fade_leds()
         if self.is_playing:
             now = time.monotonic()
@@ -107,6 +137,9 @@ class MovieExtension(Extension):
                     self.main_group.append(self.text_group)
                 else:
                     if self.tile_grid: self.tile_grid[0] = self.frame_index
+
+    def _fade_leds_to(self, color):
+        self.target_color = list(color)
 
     def _fade_leds(self):
         # Helper
