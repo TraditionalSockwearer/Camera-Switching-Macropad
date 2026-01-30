@@ -4,9 +4,7 @@
 ![Hardware](https://img.shields.io/badge/Hardware-Seeed_XIAO_RP2040-blue)
 ![Software](https://img.shields.io/badge/Firmware-CircuitPython-purple)
 
-## Project Status: Active Development
-**Current Phase:** PCB Design & Firmware Simulation
-This project is currently in the prototyping phase. The firmware logic has been partially validated via simulation (Wokwi), and the parts are currently being delivered. 
+## Project Status: Completed
 
 ## Project Overview
 This project is an ongoing engineering initiative to build a custom, 4-key mechanical macropad designed specifically for **Live OBS (Open Broadcaster Software) Scene Switching**.
