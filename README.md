@@ -1,111 +1,94 @@
-# Custom OBS Macropad (RP2040)
+# OBS & Media Macropad (RP2040)
 
-![Status](https://img.shields.io/badge/Status-In_Development-orange)
-![Hardware](https://img.shields.io/badge/Hardware-Seeed_XIAO_RP2040-blue)
-![Software](https://img.shields.io/badge/Firmware-CircuitPython-purple)
+A custom automated macropad built with a custom PCB and RP2040, featuring dual modes for **OBS Camera Switching** and **Media Control** with scrolling track info and animated OLED feedback.
 
-## Project Status: Active Development
-**Current Phase:** PCB Design & Firmware Simulation
-This project is currently in the prototyping phase. The firmware logic has been partially validated via simulation (Wokwi), and the parts are currently being delivered. 
+## Features
 
-## Project Overview
-This project is an ongoing engineering initiative to build a custom, 4-key mechanical macropad designed specifically for **Live OBS (Open Broadcaster Software) Scene Switching**.
+- **Dual Modes**: Switch between OBS and Media modes via a menu.
+- **OLED Display**: Shows current mode, active camera, or scrolling song title with animations.
+- **OBS Mode**:
+  - 4 Camera Buttons (Green, Red, Blue, Yellow LEDs).
+  - Animated film reel transition between camera switches.
+  - **Hold Button 4 (Last Button)** (2s) to exit to Menu.
+  - Input blocking prevents accidental spamming during animations.
+- **Media Mode**:
+  - Controls: Previous, Play/Pause, Next, Mute.
+  - Custom animations for each action (Skip, Play/Pause, Mute/Unmute).
+  - **Hold Button 2 (Play/Pause)** (2s) to exit to Menu.
+  - **Scrolling Text**: Displays the currently playing song from your PC (requires host script).
 
-**The Use Case:**
-This device is being built for a local temple's media team. The goal is to provide volunteer operators with a simplified, fail-safe hardware interface to switch camera angles during live services, eliminating the need to interact with complex software UI during a broadcast.
+## Setup
 
-## Planned Features
-* **Context-Aware Display:** Integrated **0.91" OLED** to display active camera scenes ("Camera 1 Active", etc.).
-* **Synced RGB Feedback:** 4x **SK6812 Mini-E LEDs** that provide colour-coded status indicators synchronised with the active scene.
-* **USB HID Interface:** Acts as a standard keyboard sending F13-F16 keys to trigger OBS hotkeys.
-* **Compact Form Factor:** Custom 3D-printed enclosure with heat-set inserts for durability.
+### 1. Firmware
 
-## Tech Stack
-* **Microcontroller:** Seeed Studio XIAO RP2040
-* **EDA / PCB:** KiCad 9
-* **CAD:** Fusion 360
-* **Firmware:** Python (MicroPython) with State Machine logic.
-* **Simulation:** Wokwi (Used to validate I2C OLED & NeoPixel logic) and onboard testing.
+1. Flash CircuitPython to your RP2040.
 
-## Development Roadmap
-- [x] **Requirement Analysis:** Defined constraints (silent switches, OLED feedback).
-- [x] **Component Sourcing:** Validated BOM (Bill of Materials) for cost/availability.
-- [x] **Schematic Capture:** Completed electrical schematic in KiCad.
-- [x] **PCB Layout:** Routing tracks and defining edge cuts (In Progress).
-- [ ] **Prototyping:** 3D printing the case and soldering the first unit.
-- [x] **Firmware Prototype:** Created state-machine logic in Wokwi (Simulation).
-- [ ] **Integration:** Final HID implementation and OBS setup at the venue.
+2. Copy the **entire contents** of `Firmware/CircuitPy Drive` to the root of your `CIRCUITPY` drive.
+   - This folder contains pre-compiled `.mpy` files ready to use.
+   - Structure:
+     ```
+     CIRCUITPY/
+     ├── boot.py
+     ├── code.py
+     └── lib/
+         ├── kmk/           (Keyboard library)
+         ├── main_logic.mpy
+         ├── movie_data.mpy
+         ├── movie_extension.mpy
+         └── (other dependencies)
+     ```
 
-## Repository Structure
-```text
-/CAD          # STL files (In Progress)
-/PCB       # Schematic and PCB files
-/Firmware     # Wokwi simulation code and future main.py
-```
+3. If you want to modify the firmware, edit the source files in `Firmware/CircuitPythonFiles/` and recompile using `mpy-cross`.
 
+### 2. Host Script (For Media Info)
 
+> **Note**: Python 3.12 is recommended. If you have connection issues, ensure you are using the correct COM port and that the device lists a VID of 0x2886.
 
-## CAD Model
-<img width="951" height="779" alt="image" src="https://github.com/user-attachments/assets/b5844305-660c-411d-9da0-f54c886693f1" />
+To see your PC's currently playing song on the OLED:
 
-<img width="984" height="730" alt="image" src="https://github.com/user-attachments/assets/2d7f6ce6-2620-40b6-8b80-b89ede5abe7f" />
+1. Open this folder in a terminal.
 
-<img width="1006" height="647" alt="image" src="https://github.com/user-attachments/assets/8a1b63fc-cbfb-4a23-8d46-a5110c560c23" />
+2. Install requirements:
 
-Made in Fusion360
+    ```bash
+    pip install -r requirements.txt
+    ```
 
+3. Run the communication script:
 
-## PCB
-<img width="1146" height="620" alt="image" src="https://github.com/user-attachments/assets/fefac079-6841-43f9-895a-d0292b97b4ad" />
+    ```bash
+    py host_media_bridge.py
+    ```
 
-## Schematic
+4. Switch the macropad to Media Mode.
 
-<img width="764" height="378" alt="image" src="https://github.com/user-attachments/assets/d3047c62-dad2-44fa-a111-7360c529ee98" />
+## Usage
 
-# BOM
+**Menu**:
 
-* 4x Cherry MX Switches 
+- **Btn 1**: OBS Mode
+- **Btn 2**: Media Mode
 
-* 2x SK6812 MINI Leds
+**Input Layout**:
 
-SK6812 MINI-E RGB 20PCS Link: 
+| Button | OBS Mode | Media Mode |
+| :--- | :--- | :--- |
+| **1** | Camera 1 | Previous |
+| **2** | Camera 2 | Play/Pause (Hold to Exit) |
+| **3** | Camera 3 | Next |
+| **4** | Camera 4 (Hold to Exit) | Mute |
 
-    https://www.aliexpress.com/item/1005008308801366.html
+## Folder Structure
 
-* 1x XIAO RP2040 
+| Folder | Description |
+| :--- | :--- |
+| `Firmware/CircuitPy Drive/` | Pre-compiled files ready to copy to CIRCUITPY |
+| `Firmware/CircuitPythonFiles/` | Source `.py` files for development |
+| `Animation From wokwi/` | Original animation source files (.ino) |
 
-Seeed XIAO RP2040 Link: 
+## Hardware
 
-    https://www.aliexpress.com/item/1005008200917480.html
-
-* 4x Blank DSA Keycaps
-
-Blank Keycaps 10PCS Link: 
-    
-    https://www.aliexpress.com/item/1005005514406952.html
-
-* 4x M3x16 Bolt 
-
-M3x16mm Screw Link: 
-    
-    https://www.aliexpress.com/item/1005008585550992.html
-
-* 4x M3 Heatset 
-
-M3 Heat Set Link: 
-
-    https://www.aliexpress.com/item/1005008897571758.html
-
-* 1x 0.91" 128x32 OLED Display 
-
-OLED Display Link: 
-
-    https://www.aliexpress.com/item/1005008640108394.html
-
-* 1x Case (2 parts: Bottom Case and Cover)
-
-* 1x PCB
-
-I used JLBPCB for PCB
-Gerber files are made by opening pcb file. Then press the Files, then Plot, and make sure to press drill and as a single file (it's an option)
-
+- RP2040 Microcontroller
+- SSD1306 OLED (128x32)
+- 4x Mechanical Switches
+- NeoPixel LEDs
