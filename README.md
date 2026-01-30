@@ -1,6 +1,6 @@
 # Custom OBS Macropad (RP2040)
 
-![Status](https://img.shields.io/badge/Status-In_Development-orange)
+![Status](https://img.shields.io/badge/Status-Completed-darkgreen)
 ![Hardware](https://img.shields.io/badge/Hardware-Seeed_XIAO_RP2040-blue)
 ![Software](https://img.shields.io/badge/Firmware-CircuitPython-purple)
 
@@ -32,9 +32,9 @@ This device is being built for a local temple's media team. The goal is to provi
 - [x] **Component Sourcing:** Validated BOM (Bill of Materials) for cost/availability.
 - [x] **Schematic Capture:** Completed electrical schematic in KiCad.
 - [x] **PCB Layout:** Routing tracks and defining edge cuts (In Progress).
-- [ ] **Prototyping:** 3D printing the case and soldering the first unit.
+- [x] **Prototyping:** 3D printing the case and soldering the first unit.
 - [x] **Firmware Prototype:** Created state-machine logic in Wokwi (Simulation).
-- [ ] **Integration:** Final HID implementation and OBS setup at the venue.
+- [x] **Integration:** Final HID implementation and OBS setup at the venue.
 
 ## Repository Structure
 ```text
